@@ -1,4 +1,124 @@
-body{
-    background-color: #E5E5E5;
+$navButtonSize: 2rem;
+
+*{
+    box-sizing: border-box;
 }
 
+body {
+    // background-color: #E5E5E5;
+    font-family: 'LEMON MILK', sans-serif;
+    font-size: 13px;
+    margin: 0%;
+
+    nav {
+        border: 2px dashed #FDF6EB;
+        // rozmieszczenie obok siebie
+        display: flex;
+        // oddalenie w od siebie po obu końcach
+        justify-content: space-between;
+        padding: 2rem 2rem .5rem 2rem;
+        border-bottom: 2px solid black;
+        z-index: 1;
+    
+
+        .logoWrapper {
+            // border: 2px dashed #cc1e0b;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: $navButtonSize;
+                height: $navButtonSize;
+                margin: 0.5rem;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
+        }
+
+        .burgerWrapper {
+            display: flex;
+            align-items: center;
+            // border: 2px dashed #31ed14;
+            position: relative;
+            
+
+            label {
+                // border: 2px dashed #f1148a;
+                width: $navButtonSize;
+                height: $navButtonSize;
+                position: absolute;
+                right: 0;
+                // Rączka jak podejdziemy kursorem nad label
+                cursor: pointer;
+                margin-right: .7rem;
+            
+
+                >div {
+                    $barHeight: 6px;
+                    height: $barHeight;
+                    background-color: #000;
+                    position: absolute;
+                    width: 100%;
+
+                    &:nth-child(2) {
+                        top: calc($navButtonSize / 2 - $barHeight / 2);
+                    }
+
+                    &:nth-child(3) {
+                        bottom: 0;
+                        display: flex;
+                        background-color: transparent;
+                        justify-content: space-between;
+
+                        div:nth-child(1) {
+                            background-color: #000;
+                            width: 60%;
+                        }
+
+                        div:nth-child(2) {
+                            width: 20%;
+                            background-color: orange;
+                        }
+
+                    }
+                  
+                } 
+                
+            
+            }
+            
+            input {
+                display: none;
+            }
+
+            // ukryć menu
+            ol {
+                border: 2px dashed #ebe423;
+                // display: none;
+                top: -100vh;
+                position: absolute;
+                right: -2rem;
+                list-style: none;
+                padding: 20px 10px;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                position: absolute;   
+                transition: .5s; 
+            }
+
+        //    wpływamy na przycisk toggler ~
+            #toggler:checked ~ {
+                ol{
+                   top:100%;
+                                    }
+            }
+            
+        }
+    }
+  
+
+ }
