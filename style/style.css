@@ -8,12 +8,12 @@ body {
   margin: 0%;
 }
 body nav {
+  background-color: #ebe423;
   border: 2px dashed #FDF6EB;
   display: flex;
   justify-content: space-between;
   padding: 2rem 2rem 0.5rem 2rem;
   border-bottom: 2px solid black;
-  z-index: 1;
 }
 body nav .logoWrapper {
   display: flex;
@@ -30,6 +30,7 @@ body nav .logoWrapper h1 {
 body nav .burgerWrapper {
   display: flex;
   align-items: center;
+  border: 2px dashed #31ed14;
   position: relative;
 }
 body nav .burgerWrapper label {
@@ -41,6 +42,7 @@ body nav .burgerWrapper label {
   margin-right: 0.7rem;
 }
 body nav .burgerWrapper label > div {
+  transition: 0.5s;
   height: 6px;
   background-color: #000;
   position: absolute;
@@ -67,7 +69,8 @@ body nav .burgerWrapper input {
   display: none;
 }
 body nav .burgerWrapper ol {
-  border: 2px dashed #ebe423;
+  z-index: -1;
+  background-color: white;
   top: -100vh;
   position: absolute;
   right: -2rem;
@@ -75,10 +78,54 @@ body nav .burgerWrapper ol {
   padding: 20px 10px;
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   position: absolute;
   transition: 0.5s;
 }
 body nav .burgerWrapper #toggler:checked ~ ol {
   top: 100%;
+}
+body nav .burgerWrapper #toggler:checked ~ label > div {
+  top: calc(1rem - 3px);
+}
+body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(1) {
+  transform: rotate(45deg);
+}
+body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(2) {
+  opacity: 0;
+}
+body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(3) {
+  transform: rotate(-45deg);
+  background-color: black;
+  justify-content: center;
+}
+body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(3) div:nth-child(1) {
+  display: none;
+}
+body main {
+  position: relative;
+  z-index: -2;
+}
+body main .titleWrapper {
+  border-left: 2px solid #000;
+  margin-left: 2.7rem;
+  padding: 2rem 2rem 4rem 1rem;
+}
+body main .titleWrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem 0;
+}
+body main .titleWrapper p {
+  font-family: "Lemon/Milk light", sans-serif;
+  margin: 1rem 0;
+}
+body main .titleWrapper button {
+  display: none;
+}
+body main .titleWrapper b {
+  font-size: 2rem;
+}
+body main .imgContainer {
+  border-top: 2px solid #000;
 }/*# sourceMappingURL=style.css.map */
