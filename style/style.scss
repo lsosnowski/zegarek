@@ -10,6 +10,9 @@ $border: 2px solid #000;
 
 body {
     // background-color: #E5E5E5;
+    z-index: -3;
+    position: relative;
+
     font-family: 'LEMON MILK', sans-serif;
     font-size: 13px;
     margin: 0%;
@@ -154,6 +157,7 @@ body {
             
         }
     }
+    
     main{
         // background-color: #31ed14;
         position: relative;
@@ -177,9 +181,98 @@ body {
         }
         .imgContainer{
             border-top: $border;
+          
+            .imgWrapper{
+                background-color: #FE682F;
+                margin: 0 $globalpadding;
+                border-left: $border;
+                border-right: $border;
+                .img{
+                    // border: 2px dashed red;
+                    min-height: 80vh;
+                    background-image: url(../style/man-is-putting-watch-his-wrist-1.webp);
+                    background-size:cover;
+                    background-position: center;
+                    border-radius: 50vw;
+
+
+                }
+            }
 
         }
 
+        .contentContainer{
+            border: 2px dashed #0c960c;
+            margin: 0 $globalpadding;
+            border-right: $border;
+            border-right: $border;
+            // padding: 0 1rem;
+
+
+            .buttonContainer{
+                text-align: center;
+                padding: $globalpadding 0;
+                button{
+                    border-radius: 0;
+                    padding: .9rem 2.5rem;
+                    background-color: #FE682F;
+                    border: $border;
+                    position: relative;
+                    &:after{
+                        border: $border;
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: white;
+                        top: .5rem;
+                        left: .5rem;
+                        z-index: -1;
+                    }
+                    &:active{
+                       top: .5rem;
+                       left: .5rem; 
+                       &:after{
+                        top: 0;
+                        left: 0;
+                       }
+                    }
+                }
+                border:2px dashed red;
+            }
+
+            .imgWrapper{
+                background-color: #FE682F;
+                margin: 0 $globalpadding;
+                border-left: $border;
+                border-right: $border;
+                .img{
+                    // border: 2px dashed red;
+                    min-height: 60vh;
+                    background-image: url(../style/AnyConv.com__businessman-checking-time\ -\ Copy\ 1.webp);
+                    background-position: center;
+                    background-size: cover;
+                }
+            
+            }
+
+            .contentWrapper{
+                p{
+                    text-align: center;
+                }
+            }
+
+        }
+        
+        .trendingWrapper{
+           
+            .trending{
+                background-color: #FFEE01;
+                border-top: $border;
+                border-bottom: $border;
+            }
+           
+        }
 
     }
   

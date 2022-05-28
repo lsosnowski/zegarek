@@ -3,6 +3,8 @@
 }
 
 body {
+  z-index: -3;
+  position: relative;
   font-family: "LEMON MILK", sans-serif;
   font-size: 13px;
   margin: 0%;
@@ -128,4 +130,74 @@ body main .titleWrapper b {
 }
 body main .imgContainer {
   border-top: 2px solid #000;
+}
+body main .imgContainer .imgWrapper {
+  background-color: #FE682F;
+  margin: 0 2.7rem;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+}
+body main .imgContainer .imgWrapper .img {
+  min-height: 80vh;
+  background-image: url(../style/man-is-putting-watch-his-wrist-1.webp);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50vw;
+}
+body main .contentContainer {
+  border: 2px dashed #0c960c;
+  margin: 0 2.7rem;
+  border-right: 2px solid #000;
+  border-right: 2px solid #000;
+}
+body main .contentContainer .buttonContainer {
+  text-align: center;
+  padding: 2.7rem 0;
+  border: 2px dashed red;
+}
+body main .contentContainer .buttonContainer button {
+  border-radius: 0;
+  padding: 0.9rem 2.5rem;
+  background-color: #FE682F;
+  border: 2px solid #000;
+  position: relative;
+}
+body main .contentContainer .buttonContainer button:after {
+  border: 2px solid #000;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: -1;
+}
+body main .contentContainer .buttonContainer button:active {
+  top: 0.5rem;
+  left: 0.5rem;
+}
+body main .contentContainer .buttonContainer button:active:after {
+  top: 0;
+  left: 0;
+}
+body main .contentContainer .imgWrapper {
+  background-color: #FE682F;
+  margin: 0 2.7rem;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+}
+body main .contentContainer .imgWrapper .img {
+  min-height: 60vh;
+  background-image: url(../style/AnyConv.com__businessman-checking-time\ -\ Copy\ 1.webp);
+  background-position: center;
+  background-size: cover;
+}
+body main .contentContainer .contentWrapper p {
+  text-align: center;
+}
+body main .trendingWrapper .trending {
+  background-color: #FFEE01;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
 }/*# sourceMappingURL=style.css.map */
