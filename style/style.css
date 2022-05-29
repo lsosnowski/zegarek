@@ -2,6 +2,38 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border-radius: 0;
+  padding: 0.9rem 2.5rem;
+  background-color: #FE682F;
+  border: 2px solid #000;
+  position: relative;
+}
+button:after {
+  border: 2px solid #000;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: -1;
+}
+button:active {
+  top: 0.5rem;
+  left: 0.5rem;
+}
+button:active:after {
+  top: 0;
+  left: 0;
+}
+
 body {
   z-index: -3;
   position: relative;
@@ -10,8 +42,6 @@ body {
   margin: 0%;
 }
 body nav {
-  background-color: #ebe423;
-  border: 2px dashed #FDF6EB;
   display: flex;
   justify-content: space-between;
   padding: 2rem 2rem 0.5rem 2rem;
@@ -32,7 +62,6 @@ body nav .logoWrapper h1 {
 body nav .burgerWrapper {
   display: flex;
   align-items: center;
-  border: 2px dashed #31ed14;
   position: relative;
 }
 body nav .burgerWrapper label {
@@ -105,6 +134,9 @@ body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(3) {
 body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(3) div:nth-child(1) {
   display: none;
 }
+body nav .buttons {
+  display: none;
+}
 body main {
   position: relative;
   z-index: -2;
@@ -119,7 +151,7 @@ body main .titleWrapper h2 {
   margin-bottom: 0.5rem 0;
 }
 body main .titleWrapper p {
-  font-family: "Lemon/Milk light", sans-serif;
+  font-family: "LEMON MILK", sans-serif;
   margin: 1rem 0;
 }
 body main .titleWrapper button {
@@ -145,7 +177,6 @@ body main .imgContainer .imgWrapper .img {
   border-radius: 50vw;
 }
 body main .contentContainer {
-  border: 2px dashed #0c960c;
   margin: 0 2.7rem;
   border-right: 2px solid #000;
   border-right: 2px solid #000;
@@ -153,33 +184,6 @@ body main .contentContainer {
 body main .contentContainer .buttonContainer {
   text-align: center;
   padding: 2.7rem 0;
-  border: 2px dashed red;
-}
-body main .contentContainer .buttonContainer button {
-  border-radius: 0;
-  padding: 0.9rem 2.5rem;
-  background-color: #FE682F;
-  border: 2px solid #000;
-  position: relative;
-}
-body main .contentContainer .buttonContainer button:after {
-  border: 2px solid #000;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  top: 0.5rem;
-  left: 0.5rem;
-  z-index: -1;
-}
-body main .contentContainer .buttonContainer button:active {
-  top: 0.5rem;
-  left: 0.5rem;
-}
-body main .contentContainer .buttonContainer button:active:after {
-  top: 0;
-  left: 0;
 }
 body main .contentContainer .imgWrapper {
   background-color: #FE682F;
@@ -195,9 +199,132 @@ body main .contentContainer .imgWrapper .img {
 }
 body main .contentContainer .contentWrapper p {
   text-align: center;
+  padding: 2rem 0;
+  margin: 0;
+  line-height: 2rem;
+}
+body main .trendingWrapper {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
 }
 body main .trendingWrapper .trending {
   background-color: #FFEE01;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
+  margin: 0 2.7rem;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+body main .trendingWrapper .trending p {
+  margin: 0;
+  font-size: 3rem;
+}
+
+@media (min-width: 1280px) {
+  nav {
+    padding: 0 3rem !important;
+  }
+
+  .burgerWrapper {
+    flex: 1;
+    padding: 0 2rem;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+  }
+  .burgerWrapper ol {
+    top: 0 !important;
+    position: relative !important;
+    z-index: 0 !important;
+    width: auto !important;
+    right: auto !important;
+    flex: 1;
+    justify-content: space-evenly !important;
+  }
+  .burgerWrapper label {
+    display: none;
+  }
+
+  .buttons {
+    display: flex !important;
+    align-items: center;
+  }
+  .buttons a {
+    margin: 0 1rem;
+  }
+
+  .logoWrapper,
+.buttons {
+    padding: 2.5rem 2rem;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 0 6rem;
+    margin-bottom: 4rem;
+  }
+  main .titleWrapper {
+    padding: 3rem 2rem 4rem 3rem !important;
+    border-bottom: 0.1rem solid !important;
+  }
+  main .titleWrapper h2 {
+    font-size: 3rem !important;
+  }
+  main .titleWrapper h2 img {
+    transform: scale(2.4);
+    margin-left: 2rem;
+  }
+  main .titleWrapper p {
+    max-width: 70%;
+  }
+  main .titleWrapper button {
+    display: flex !important;
+    margin: 2rem 0;
+  }
+  main .imgContainer {
+    border: none !important;
+  }
+  main .imgContainer .imgWrapper {
+    height: 100%;
+    margin: 0 !important;
+    border: none !important;
+  }
+  main .imgContainer .imgWrapper .img {
+    min-height: 100% !important;
+  }
+  main .contentContainer {
+    margin: 0 !important;
+    display: flex;
+    padding: 0 !important;
+    border-bottom: 2px solid #000;
+    border-right: 2px solid #000 !important;
+  }
+  main .contentContainer .buttonContainer {
+    display: none;
+  }
+  main .contentContainer .imgWrapper {
+    flex: 1;
+  }
+  main .contentContainer .imgWrapper .img {
+    min-height: 100% !important;
+    border: none !important;
+  }
+  main .contentContainer .contentWrapper {
+    flex: 4;
+    padding: 1rem 1rem;
+    font-family: "LEMON MILK", sans-serif;
+    font-size: 1.5rem;
+  }
+  main .contentContainer .contentWrapper p {
+    text-align: left !important;
+  }
+  main .trendingWrapper {
+    border-top: none !important;
+  }
+  main .trendingWrapper .trending {
+    border-top: none !important;
+    margin: 0 !important;
+    min-height: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
