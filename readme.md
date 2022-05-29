@@ -1,5 +1,5 @@
 # Zegarek
 Strona stworzona z [tego template](https://www.figma.com/community/file/1108290055404782066)
 
-[live example](https://l.sosnowski.github.io/zegarek/)
+[live example](https://lsosnowski.github.io/zegarek/)
 
